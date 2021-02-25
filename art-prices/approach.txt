@@ -1,0 +1,12 @@
+My approach in general was to fill null values with the most accurate estimates I could muster, based on other values in the dataframe. Weight for example was filled with a function that was based on the material of the art, and their respective average weights. Vice versa if needed. The rest of the values were mostly filled with the mean values of their corresponding columns. The cost column having negative values was no good so I took the absolute values of those.
+Once there were no more Null values I concatenated columns with dummy variables for the usable categorical data and got rid of the rest.
+I also had to eliminate the rows that were severe outliers in multiple columns to create a better model.
+I used only the training data at first and ran a train test split to go back and fourth in testing features and coefficients and once I was satisfied I imported the test file and transformed it in the same way, before putting it through the model and cheching the metrics - very similar to the values I was receiving in the training data.
+Libraries used:
+Numpy
+Pandas
+Seaborn
+Matplotlib
+Scikitlearn
+Statsmodels
+**UPDATE: I went back and normalized the data with a log transformation, which SIGNIFICANTLY increased the accuracy of my model. I also changed models from linear regression to Random Forest Regression. Otherwise everything else remained the same.
